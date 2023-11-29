@@ -42,8 +42,8 @@ namespace ArmConstants {
 
 namespace ClawConstants {
 
-    constexpr int kLeftMotorId  {6};
-    constexpr int kRightMotorId {5};
+    constexpr int kLeftMotorId  {5};
+    constexpr int kRightMotorId {6};
 
 }
 

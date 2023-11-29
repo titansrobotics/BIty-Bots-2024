@@ -4,7 +4,7 @@ ClawSubsystem::ClawSubsystem() :
     m_leftMotor{ClawConstants::kLeftMotorId, rev::CANSparkMax::MotorType::kBrushless},
     m_rightMotor{ClawConstants::kRightMotorId, rev::CANSparkMax::MotorType::kBrushless} {
         
-        m_leftMotor.SetInverted(true);
+        m_rightMotor.SetInverted(true);
 }
 
 void ClawSubsystem::Periodic() {}
