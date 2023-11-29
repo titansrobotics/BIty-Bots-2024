@@ -9,7 +9,12 @@ ArmSubsystem::ArmSubsystem() :
 void ArmSubsystem::Periodic() {}
 
 void ArmSubsystem::RaiseArm(double speed) {
-    m_motor.Set(speed);
+    if(speed > 0){
+        m_motor.Set(-speed);
+    } else {
+        m_motor.Set(0);
+    }
+    
 }
 
 void ArmSubsystem::ResetEncoder() {

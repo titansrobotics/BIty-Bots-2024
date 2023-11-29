@@ -42,7 +42,7 @@ namespace ArmConstants {
 
 namespace ClawConstants {
 
-    constexpr int kLeftMotorId  {7};
+    constexpr int kLeftMotorId  {6};
     constexpr int kRightMotorId {5};
 
 }
@@ -50,8 +50,8 @@ namespace ClawConstants {
 
 namespace SpeedConstants {
 
-    constexpr double kDriveForwardPercentage  {0.6};
-    constexpr double kDriveRotationPercentage {0.3};
+    constexpr double kDriveForwardPercentage  {0.3};
+    constexpr double kDriveRotationPercentage {0.15};
 
     constexpr double kArmPercentage {0.5};
 
