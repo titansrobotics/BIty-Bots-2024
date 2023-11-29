@@ -4,13 +4,14 @@ ArmSubsystem::ArmSubsystem() :
     m_motor   {ArmConstants::kMotorId, rev::CANSparkMax::MotorType::kBrushless},
     m_encoder {ArmConstants::kEncoderId[0], ArmConstants::kEncoderId[1]} {
         m_encoder.SetDistancePerPulse(ArmConstants::kAnglePerPulse);
+        m_motor.SetInverted(true);
 }
 
 void ArmSubsystem::Periodic() {}
 
 void ArmSubsystem::RaiseArm(double speed) {
     if(speed > 0){
-        m_motor.Set(-speed);
+        m_motor.Set(speed);
     } else {
         m_motor.Set(0);
     }
