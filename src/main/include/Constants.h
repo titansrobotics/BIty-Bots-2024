@@ -23,14 +23,14 @@ namespace DriveConstants {
 
 namespace ElevatorConstants {
 
-    constexpr int kMotorId {8};
+    constexpr int kMotorId {9};
 
 }
 
 
 namespace ArmConstants {
 
-    constexpr int kMotorId {9};
+    constexpr int kMotorId {8};
 
     constexpr int kEncoderId[2] {4, 5};
 
@@ -57,7 +57,7 @@ namespace SpeedConstants {
 
     constexpr double kElevatorPercentage {0.3};
 
-    constexpr double kClawPercentage {0.3};
+    constexpr double kClawPercentage {0.2};
 
 }
 
@@ -72,8 +72,8 @@ namespace OIConstants {
     constexpr int kArmAxisId       {1};
     constexpr int kElevatorRaiseId {5};
     constexpr int kElevatorLowerId {3};
-    constexpr int kClawGrabId      {1};
-    constexpr int kClawEjectId     {2};
+    constexpr int kClawGrabId      {2};
+    constexpr int kClawEjectId     {1};
 
 }
 
