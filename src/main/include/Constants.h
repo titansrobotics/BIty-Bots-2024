@@ -50,8 +50,8 @@ namespace ClawConstants {
 
 namespace SpeedConstants {
 
-    constexpr double kDriveForwardPercentage  {0.3};
-    constexpr double kDriveRotationPercentage {0.15};
+    constexpr double kDriveForwardPercentage  {0.5};
+    constexpr double kDriveRotationPercentage {0.2};
 
     constexpr double kArmPercentage {0.5};
 
