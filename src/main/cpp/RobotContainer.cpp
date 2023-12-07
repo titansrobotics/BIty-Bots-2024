@@ -4,26 +4,29 @@
 
 #include "RobotContainer.h"
 
+#include <frc/shuffleboard/Shuffleboard.h>
 #include <frc2/command/Commands.h>
 
+#include <commands/DefaultDrive.h>
+#include <commands/DefaultArm.h>
+
+
 RobotContainer::RobotContainer() {
+
+  m_chooser.SetDefaultOption("Simple Auto", &m_simpleAuto);
+
+  frc::Shuffleboard::GetTab("Autonomous").Add(m_chooser);
+
   ConfigureBindings();
 
+  m_drive.SetDefaultCommand(DefaultDrive(
+    &m_drive,
+    [this] {return m_driverController.GetRawAxis(OIConstants::kDriveForwardAxisId) * SpeedConstants::kDriveForwardPercentage;},
+    [this] {return m_driverController.GetRawAxis(OIConstants::kDriveRotationAxisId) * SpeedConstants::kDriveRotationPercentage;}));
 
-  m_drive.SetDefaultCommand(frc2::cmd::Run(
-    [this] {
-        m_drive.ArcadeDrive(
-        m_driverController.GetRawAxis(OIConstants::kDriveForwardAxisId) * SpeedConstants::kDriveForwardPercentage,
-        m_driverController.GetRawAxis(OIConstants::kDriveRotationAxisId) * SpeedConstants::kDriveRotationPercentage);
-    },
-    {&m_drive}));
-
-  
-  m_arm.SetDefaultCommand(frc2::cmd::Run(
-    [this] {
-        m_arm.RaiseArm(m_armController.GetRawAxis(OIConstants::kArmAxisId) * SpeedConstants::kArmPercentage);
-    },
-    {&m_arm}));
+  m_arm.SetDefaultCommand(DefaultArm(
+    &m_arm,
+    [this] {return m_armController.GetRawAxis(OIConstants::kArmAxisId) * SpeedConstants::kArmPercentage;}));
 }
 
 void RobotContainer::ConfigureBindings() {
@@ -45,5 +48,5 @@ void RobotContainer::ConfigureBindings() {
 }
 
 frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
-  return frc2::cmd::Print("No autonomous command configured");
+  return m_chooser.GetSelected();
 }

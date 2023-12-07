@@ -11,7 +11,11 @@
 #include <frc2/command/CommandPtr.h>
 
 #include "Constants.h"
-#include "commands/Autos.h"
+
+#include "commands/DefaultDrive.h"
+#include "commands/DefaultArm.h"
+#include "commands/SimpleAuto.h"
+
 #include "subsystems/ArmSubsystem.h"
 #include "subsystems/ClawSubsystem.h"
 #include "subsystems/DriveSubsystem.h"
@@ -37,11 +41,10 @@ class RobotContainer {
     DriveSubsystem m_drive;
     ElevatorSubsystem m_elevator;
 
-    //setup autos before adding auto selector
-    //frc2::CommandPtr m_simpleAuto = autos::SimpleAuto(&m_drive);
-    //frc2::CommandPtr m_complexAuto = autos::ComplexAuto(&m_drive, &m_hatch);
+    SimpleAuto m_simpleAuto{&m_drive, 6, 0.3};
+   //frc2::CommandPtr m_complexAuto = autos::ComplexAuto(&m_drive, &m_hatch);
 
-    //frc::SendableChooser<frc2::Command*> m_chooser;
+    frc::SendableChooser<frc2::CommandPtr> m_chooser;
  
     void ConfigureBindings();
 };
