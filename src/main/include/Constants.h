@@ -18,6 +18,8 @@ namespace DriveConstants {
     constexpr double kDistancePerPulse    {kWheelDiameter*kPI/kCountsPerRevolution};
     //Assuming the encoder is mounted directly on the wheel shaft
 
+    constexpr double kDriveForwardPercentage  {0.5};
+    constexpr double kDriveRotationPercentage {0.2};
 }
 
 
@@ -25,6 +27,7 @@ namespace ElevatorConstants {
 
     constexpr int kMotorId {9};
 
+    constexpr double kElevatorPercentage {0.3};
 }
 
 
@@ -37,6 +40,7 @@ namespace ArmConstants {
     constexpr double kCountsPerRevolution {1};
     constexpr double kAnglePerPulse       {2*kPI/kCountsPerRevolution};
 
+    constexpr double kArmPercentage {0.5};
 }
 
 
@@ -45,20 +49,7 @@ namespace ClawConstants {
     constexpr int kLeftMotorId  {5};
     constexpr int kRightMotorId {6};
 
-}
-
-
-namespace SpeedConstants {
-
-    constexpr double kDriveForwardPercentage  {0.5};
-    constexpr double kDriveRotationPercentage {0.2};
-
-    constexpr double kArmPercentage {0.5};
-
-    constexpr double kElevatorPercentage {0.3};
-
     constexpr double kClawPercentage {0.2};
-
 }
 
 
@@ -77,5 +68,10 @@ namespace OIConstants {
 
 }
 
+
+namespace AutoConstants {
+    constexpr int kSimpleAutoSpeed {0.3};
+    constexpr int kSimpleAutoTime  {3};
+}
 
 #endif

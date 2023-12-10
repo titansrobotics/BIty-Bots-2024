@@ -12,9 +12,7 @@
 
 #include "Constants.h"
 
-#include "commands/DefaultDrive.h"
-#include "commands/DefaultArm.h"
-#include "commands/SimpleAuto.h"
+#include "commands/Autos.h"
 
 #include "subsystems/ArmSubsystem.h"
 #include "subsystems/ClawSubsystem.h"
@@ -41,7 +39,6 @@ class RobotContainer {
     DriveSubsystem m_drive;
     ElevatorSubsystem m_elevator;
 
-    SimpleAuto m_simpleAuto{&m_drive, 6, 0.3};
    //frc2::CommandPtr m_complexAuto = autos::ComplexAuto(&m_drive, &m_hatch);
 
     frc::SendableChooser<frc2::CommandPtr> m_chooser;
