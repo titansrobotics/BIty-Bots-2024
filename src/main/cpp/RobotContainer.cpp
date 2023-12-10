@@ -10,11 +10,11 @@
 
 RobotContainer::RobotContainer() {
 
-  //m_chooser.SetDefaultOption("Simple Auto", &m_simpleAuto);
+    m_chooser.SetDefaultOption("Simple Auto", m_simpleAuto.get());
 
-  frc::Shuffleboard::GetTab("Autonomous").Add(m_chooser);
+    frc::Shuffleboard::GetTab("Autonomous").Add(m_chooser);
 
-  ConfigureBindings();
+    ConfigureBindings();
 
     m_drive.SetDefaultCommand(frc2::cmd::Run(
     [this] {
@@ -48,6 +48,6 @@ void RobotContainer::ConfigureBindings() {
     .OnFalse(frc2::cmd::RunOnce([this] { m_claw.MoveClaw(0); }, {}));
 }
 
-frc2::CommandPtr RobotContainer::GetAutonomousCommand() {
-  return m_chooser.GetSelected();
+frc2::Command* RobotContainer::GetAutonomousCommand() {
+    return m_chooser.GetSelected();
 }

@@ -23,7 +23,7 @@ class RobotContainer {
     public:
     RobotContainer();
 
-    frc2::CommandPtr GetAutonomousCommand();
+    frc2::Command* GetAutonomousCommand();
 
     private:
     frc::Joystick m_driverController {OIConstants::kDriverJoystickId};
@@ -39,9 +39,9 @@ class RobotContainer {
     DriveSubsystem m_drive;
     ElevatorSubsystem m_elevator;
 
-   //frc2::CommandPtr m_complexAuto = autos::ComplexAuto(&m_drive, &m_hatch);
+    frc2::CommandPtr m_simpleAuto = autos::SimpleAuto(&m_drive);
 
-    frc::SendableChooser<frc2::CommandPtr> m_chooser;
+    frc::SendableChooser<frc2::Command*> m_chooser;
  
     void ConfigureBindings();
 };
