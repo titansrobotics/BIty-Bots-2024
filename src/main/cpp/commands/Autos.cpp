@@ -13,12 +13,13 @@ frc2::CommandPtr autos::SimpleAuto(DriveSubsystem* drive){
         [drive]() { drive->ArcadeDrive(AutoConstants::kSimpleAutoSpeed, 0); },
         [drive](bool interrupted) { drive->ArcadeDrive(0, 0); },
         [drive]() {
-            return frc::Timer::GetFPGATimestamp().value() >= AutoConstants::kSimpleAutoTime;
+            return frc::Timer::GetFPGATimestamp().value() >= 
+                    AutoConstants::kSimpleAutoTime;
         },
         {drive})
     .ToPtr();
 }
 
-frc2::CommandPtr autos::ComplexAuto(DriveSubsystem* drive){
-    //write this later
-}
+// frc2::CommandPtr autos::ComplexAuto(DriveSubsystem* drive){
+// write this later
+// }

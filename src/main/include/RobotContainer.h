@@ -9,6 +9,8 @@
 #include <frc2/command/button/JoystickButton.h>
 #include <frc/smartdashboard/SendableChooser.h>
 #include <frc2/command/CommandPtr.h>
+#include <frc2/command/Commands.h>
+#include <frc2/command/Command.h>
 
 #include "Constants.h"
 

@@ -5,8 +5,6 @@
 #ifndef ROBOT_H
 #define ROBOT_H
 
-#include <optional>
-
 #include <frc/TimedRobot.h>
 #include <frc2/command/CommandPtr.h>
 
@@ -30,7 +28,7 @@ class Robot : public frc::TimedRobot {
     void TestExit() override;
 
     private:
-    std::optional<frc2::CommandPtr> m_autonomousCommand;
+    frc2::Command* m_autonomousCommand {nullptr};
 
     RobotContainer m_container;
 };

@@ -70,7 +70,7 @@ namespace OIConstants {
 
 
 namespace AutoConstants {
-    constexpr int kSimpleAutoSpeed {0.3};
+    constexpr double kSimpleAutoSpeed {0.3};
     constexpr int kSimpleAutoTime  {3};
 }
 
