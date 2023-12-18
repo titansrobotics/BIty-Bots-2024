@@ -1,6 +1,7 @@
 #ifndef CONSTANTS_H
 #define CONSTANTS_H
 
+#include <units/time.h>
 
 constexpr double kPI = 3.14159265358979323846;
 
@@ -70,8 +71,8 @@ namespace OIConstants {
 
 
 namespace AutoConstants {
-    constexpr double kSimpleAutoSpeed {0.3};
-    constexpr int kSimpleAutoTime  {3};
+    constexpr double kSimpleAutoSpeed {-0.3};
+    constexpr int kSimpleAutoDistance  {3};
 }
 
 #endif
